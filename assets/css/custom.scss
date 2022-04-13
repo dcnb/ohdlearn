@@ -1,0 +1,17 @@
+---
+# Generates CSS file from _sass partials
+---
+
+// customization options
+// these variables are set in "_config.yml"
+{% if site.header-bg-color %}$header-bg-color: {{ site.header-bg-color }};{% endif %}
+{% if site.header-text-color %}$header-text-color: {{ site.header-text-color }};{% endif %}
+$active-nav-color: {{ site.active-nav-color | default: '#d2f4ea' }};
+{% if site.text-color %}$text-color: {{ site.text-color }};{% endif %}
+{% if site.link-color %}$link-color: {{ site.link-color }};{% endif %}
+$base-font-size: {{ site.base-font-size | default: '1.1rem' }};
+
+// Import partials.
+@import
+  "template", "custom"
+;
